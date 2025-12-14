@@ -107,7 +107,19 @@ def main():
         p = it.get("pct")
         if p is not None and abs(p) >= 5.0:
             # query simples: ticker (você pode trocar por nome completo depois)
-            it["news"] = fetch_news_gdelt(it["ticker"], hours_back=72, max_n=5)
+            NEWS_QUERY = {
+    "FIG": "Figma OR \"Figma Inc\" OR \"Figma stock\"",
+}
+
+t = it["ticker"]
+q = NEWS_QUERY.get(t, t)
+
+# fallback: se ainda for curto, adiciona "stock"
+if len(q) <= 3:
+    q = f"{q} stock"
+
+it["news"] = fetch_news_gdelt(q, hours_back=72, max_n=5)
+
         else:
             it["news"] = []
 
