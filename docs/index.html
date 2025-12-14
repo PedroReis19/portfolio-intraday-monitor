@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Monitor Intraday</title>
+  <style>
+    body { font-family: system-ui, Arial; margin: 24px; }
+    .row { display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid #eee; }
+    .ticker { width:80px; font-weight:700; }
+    .pct { width:120px; font-variant-numeric: tabular-nums; }
+    .barwrap { flex:1; background:#f4f4f4; height:10px; border-radius:999px; overflow:hidden; }
+    .bar { height:10px; }
+    .up { background:#16a34a; }
+    .down { background:#dc2626; }
+    .meta { color:#666; font-size:12px; margin-top:6px; }
+    .news { margin: 10px 0 0 92px; padding: 10px; background:#fafafa; border:1px solid #eee; border-radius:12px; }
+    .news a { color: #111; text-decoration: none; }
+    .news a:hover { text-decoration: underline; }
+    .badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; background:#111; color:#fff; margin-left:8px; }
+  </style>
+</head>
+<body>
+  <h1>Monitor intraday (%)</h1>
+  <div id="status" class="meta"></div>
+  <div id="list"></div>
+
+  <script src="./config.js"></script>
+  <script>
+    function rawUrl(cfg) {
+      // cache-bust para evitar cache do browser
+      return `https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/${cfg.branch}/${cfg.dataPath}?v=${Date.now()}`;
+    }
+
+    function fmtPct(x) {
+      if (x === null || x === undefined) return "—";
+      const s = (x >= 0 ? "+" : "") + x.toFixed(2) + "%";
+      return s;
+    }
+
+    function clampBar(x) {
+      // escala simples: 0 a 10% vira 0 a 100% (capado)
+      const v = Math.min(Math.abs(x), 10);
+      return (v / 10) * 100;
+    }
+
+    async function main() {
+      const cfg = window.MONITOR_CONFIG;
+      const url = rawUrl(cfg);
+
+      const res = await fetch(url);
+      const data = await res.json();
+
+      document.getElementById("status").textContent =
+        `Atualizado: ${data.generated_at_utc} | Portfólio: ${fmtPct(data.portfolio_pct)} | Threshold: ±${data.threshold_pct}%`;
+
+      const root = document.getElementById("list");
+      root.innerHTML = "";
+
+      for (const it of data.items) {
+        const row = document.createElement("div");
+        row.className = "row";
+
+        const t = document.createElement("div");
+        t.className = "ticker";
+        t.textContent = it.ticker;
+
+        const p = document.createElement("div");
+        p.className = "pct";
+        p.textContent = it.pct == null ? "—" : fmtPct(it.pct);
+
+        const barwrap = document.createElement("div");
+        barwrap.className = "barwrap";
+        const bar = document.createElement("div");
+        const isUp = (it.pct || 0) >= 0;
+        bar.className = "bar " + (isUp ? "up" : "down");
+        bar.style.width = (it.pct == null ? 0 : clampBar(it.pct)) + "%";
+        barwrap.appendChild(bar);
+
+        row.appendChild(t);
+        row.appendChild(p);
+        row.appendChild(barwrap);
+
+        // badge se passou do threshold
+        if (it.pct != null && Math.abs(it.pct) >= data.threshold_pct) {
+          const b = document.createElement("span");
+          b.className = "badge";
+          b.textContent = "ALERTA";
+          p.appendChild(b);
+        }
+
+        root.appendChild(row);
+
+        // notícias
+        if (it.news && it.news.length > 0) {
+          const news = document.createElement("div");
+          news.className = "news";
+          const title = document.createElement("div");
+          title.innerHTML = `<b>Notícias recentes relacionadas</b> (GDELT)`;
+          news.appendChild(title);
+
+          const ul = document.createElement("ul");
+          for (const n of it.news) {
+            const li = document.createElement("li");
+            if (n.error) {
+              li.textContent = n.error;
+            } else {
+              li.innerHTML = `<a href="${n.url}" target="_blank" rel="noreferrer">${n.title}</a>
+                              <span class="meta"> — ${n.domain || ""} — ${n.seendate || ""}</span>`;
+            }
+            ul.appendChild(li);
+          }
+          news.appendChild(ul);
+          root.appendChild(news);
+        }
+      }
+    }
+
+    main().catch(err => {
+      document.getElementById("status").textContent = "Erro carregando dados: " + err;
+    });
+  </script>
+</body>
+</html>
