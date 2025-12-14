@@ -3,9 +3,8 @@ name: Update intraday monitor
 on:
   workflow_dispatch:
   schedule:
-    # GitHub: mínimo é 1x a cada 5 minutos :contentReference[oaicite:6]{index=6}
-    # Dica: evitar minuto 0 reduz chance de delay em alta carga :contentReference[oaicite:7]{index=7}
-    - cron: "2-59/5 * * * 1-5"
+    # 18:10 America/Sao_Paulo ~= 21:10 UTC (seg–sex)
+    - cron: "10 21 * * 1-5"
 
 permissions:
   contents: write
