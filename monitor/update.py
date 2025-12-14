@@ -1,11 +1,17 @@
 import json
 import os
 from datetime import datetime, timezone
+
 import pandas as pd
 import yfinance as yf
 from gdeltdoc import GdeltDoc, Filters
 
 DEFAULT_TICKERS = ["NTSK", "KLAR", "FIG", "NAVN"]
+
+# Query de notícias por ticker (evita “phrase too short” e reduz ruído)
+NEWS_QUERY = {
+    "FIG": "Figma",
+}
 
 def now_utc_iso():
     return datetime.now(timezone.utc).isoformat()
@@ -48,7 +54,6 @@ def fetch_intraday(ticker: str) -> dict:
     }
 
 def fetch_news_gdelt(query: str, hours_back: int = 48, max_n: int = 5):
-    # GDELT Doc API via gdeltdoc (sem key). Retorna colunas como url/title/seendate/domain... :contentReference[oaicite:5]{index=5}
     gd = GdeltDoc()
 
     f = Filters(
@@ -65,12 +70,14 @@ def fetch_news_gdelt(query: str, hours_back: int = 48, max_n: int = 5):
             articles = articles.sort_values("seendate", ascending=False)
         rows = []
         for _, r in articles.head(max_n).iterrows():
-            rows.append({
-                "title": r.get("title", ""),
-                "url": r.get("url", ""),
-                "seendate": str(r.get("seendate", "")),
-                "domain": r.get("domain", ""),
-            })
+            rows.append(
+                {
+                    "title": r.get("title", ""),
+                    "url": r.get("url", ""),
+                    "seendate": str(r.get("seendate", "")),
+                    "domain": r.get("domain", ""),
+                }
+            )
         return rows
     except Exception as e:
         return [{"error": f"Falha ao buscar notícias no GDELT: {e}"}]
@@ -106,20 +113,11 @@ def main():
     for it in items:
         p = it.get("pct")
         if p is not None and abs(p) >= 5.0:
-            # query simples: ticker (você pode trocar por nome completo depois)
-            NEWS_QUERY = {
-    "FIG": "Figma OR \"Figma Inc\" OR \"Figma stock\"",
-}
-
-t = it["ticker"]
-q = NEWS_QUERY.get(t, t)
-
-# fallback: se ainda for curto, adiciona "stock"
-if len(q) <= 3:
-    q = f"{q} stock"
-
-it["news"] = fetch_news_gdelt(q, hours_back=72, max_n=5)
-
+            t = it["ticker"]
+            q = NEWS_QUERY.get(t, t)
+            if len(q) <= 3:
+                q = f"{q} stock"
+            it["news"] = fetch_news_gdelt(q, hours_back=72, max_n=5)
         else:
             it["news"] = []
 
