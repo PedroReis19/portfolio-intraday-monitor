@@ -22,7 +22,7 @@ def pct_change(open_price: float, last_price: float) -> float:
     return (last_price - open_price) / open_price * 100.0
 
 def fetch_intraday(ticker: str) -> dict:
-    # 5m intraday do dia
+    # tenta intraday do dia (5m)
     df = yf.download(
         tickers=ticker,
         period="1d",
@@ -33,9 +33,46 @@ def fetch_intraday(ticker: str) -> dict:
         threads=False,
     )
 
+    # se vier vazio (mercado fechado / domingo / feriado), tenta últimos 5 dias e pega o último pregão disponível
     if df is None or df.empty:
-        return {"ticker": ticker, "error": "Sem dados intraday (ticker pode não existir na fonte)."}
-    # yfinance retorna índice datetime
+        df5 = yf.download(
+            tickers=ticker,
+            period="5d",
+            interval="5m",
+            progress=False,
+            auto_adjust=False,
+            group_by="column",
+            threads=False,
+        )
+
+        if df5 is None or df5.empty:
+            return {"ticker": ticker, "error": "Sem dados intraday (hoje e últimos dias)."}
+
+        df5 = df5.dropna()
+        if df5.empty:
+            return {"ticker": ticker, "error": "Sem candles válidos nos últimos dias."}
+
+        # isola o último dia com candles
+        last_date = df5.index[-1].date()
+        day_df = df5[df5.index.date == last_date]
+        if day_df.empty:
+            return {"ticker": ticker, "error": "Falha ao isolar o último pregão intraday."}
+
+        open_day = float(day_df["Open"].iloc[0])
+        last = float(day_df["Close"].iloc[-1])
+        ts_last = day_df.index[-1].to_pydatetime().replace(tzinfo=timezone.utc).isoformat()
+        p = pct_change(open_day, last)
+
+        return {
+            "ticker": ticker,
+            "open": open_day,
+            "last": last,
+            "pct": p,
+            "last_timestamp_utc": ts_last,
+            "note": f"Mercado fechado: exibindo variação intraday do último pregão ({last_date}).",
+        }
+
+    # fluxo normal (quando existe intraday do dia)
     df = df.dropna()
     if df.empty:
         return {"ticker": ticker, "error": "Sem candles válidos após limpeza."}
@@ -65,9 +102,9 @@ def fetch_news_gdelt(query: str, hours_back: int = 48, max_n: int = 5):
         articles = gd.article_search(f)
         if articles is None or len(articles) == 0:
             return []
-        # ordena por seendate desc se tiver
         if "seendate" in articles.columns:
             articles = articles.sort_values("seendate", ascending=False)
+
         rows = []
         for _, r in articles.head(max_n).iterrows():
             rows.append(
@@ -103,7 +140,7 @@ def main():
         items.append(fetch_intraday(t))
 
     # calcula retorno do portfolio (média simples se não tiver weights)
-    valid_pcts = [it["pct"] for it in items if it.get("pct") is not None]
+    valid_pcts = [it.get("pct") for it in items if it.get("pct") is not None]
     if weights and len(valid_pcts) == len(tickers):
         port_pct = sum(weights[i] * items[i]["pct"] for i in range(len(tickers)))
     else:
