@@ -6,9 +6,16 @@
   <title>Monitor Intraday</title>
   <style>
     body { font-family: system-ui, Arial; margin: 24px; }
+    .topbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom: 16px; }
+    .btn {
+      display:inline-block; padding:10px 14px; border-radius:12px;
+      border:1px solid #ddd; background:#111; color:#fff; text-decoration:none;
+      font-weight:600;
+    }
+    .btn.secondary { background:#fff; color:#111; }
     .row { display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid #eee; }
     .ticker { width:80px; font-weight:700; }
-    .pct { width:120px; font-variant-numeric: tabular-nums; }
+    .pct { width:160px; font-variant-numeric: tabular-nums; display:flex; align-items:center; gap:8px; }
     .barwrap { flex:1; background:#f4f4f4; height:10px; border-radius:999px; overflow:hidden; }
     .bar { height:10px; }
     .up { background:#16a34a; }
@@ -17,38 +24,73 @@
     .news { margin: 10px 0 0 92px; padding: 10px; background:#fafafa; border:1px solid #eee; border-radius:12px; }
     .news a { color: #111; text-decoration: none; }
     .news a:hover { text-decoration: underline; }
-    .badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; background:#111; color:#fff; margin-left:8px; }
+    .badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; background:#111; color:#fff; }
+    .panel {
+      margin-top: 16px;
+      border: 1px solid #eee;
+      border-radius: 14px;
+      overflow: hidden;
+      display: none; /* começa escondido */
+    }
+    .panel iframe { width: 100%; height: 80vh; border: 0; }
+    .hint { font-size: 12px; color: #666; margin-top: 6px; }
   </style>
 </head>
 <body>
   <h1>Monitor intraday (%)</h1>
+
+  <div class="topbar">
+    <a class="btn" target="_blank" rel="noreferrer"
+       href="https://docs.google.com/spreadsheets/d/1mcheup1rnw2xdUw4SvS9RnkiqDxud_bn3JL6Nb1F9OU/edit?gid=1033257710#gid=1033257710">
+      Abrir Dashboard (Google Sheets)
+    </a>
+
+    <button class="btn secondary" id="toggleDash" type="button">
+      Mostrar dashboard aqui
+    </button>
+
+    <button class="btn secondary" id="reload" type="button">
+      Recarregar dados
+    </button>
+  </div>
+
+  <div class="hint">
+    Dica: se o monitor não tiver dados (—), use o botão do Dashboard: ele não depende do Yahoo/yfinance.
+  </div>
+
+  <!-- Dashboard embutido (opcional) -->
+  <div class="panel" id="dashPanel">
+    <iframe
+      src="https://docs.google.com/spreadsheets/d/1mcheup1rnw2xdUw4SvS9RnkiqDxud_bn3JL6Nb1F9OU/preview?gid=1033257710"
+      allowfullscreen>
+    </iframe>
+  </div>
+
   <div id="status" class="meta"></div>
   <div id="list"></div>
 
   <script src="./config.js"></script>
   <script>
     function rawUrl(cfg) {
-      // cache-bust para evitar cache do browser
       return `https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/${cfg.branch}/${cfg.dataPath}?v=${Date.now()}`;
     }
 
     function fmtPct(x) {
       if (x === null || x === undefined) return "—";
-      const s = (x >= 0 ? "+" : "") + x.toFixed(2) + "%";
-      return s;
+      return (x >= 0 ? "+" : "") + x.toFixed(2) + "%";
     }
 
     function clampBar(x) {
-      // escala simples: 0 a 10% vira 0 a 100% (capado)
       const v = Math.min(Math.abs(x), 10);
       return (v / 10) * 100;
     }
 
-    async function main() {
+    async function loadMonitor() {
       const cfg = window.MONITOR_CONFIG;
       const url = rawUrl(cfg);
 
       const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
 
       document.getElementById("status").textContent =
@@ -69,6 +111,14 @@
         p.className = "pct";
         p.textContent = it.pct == null ? "—" : fmtPct(it.pct);
 
+        // badge se passou do threshold
+        if (it.pct != null && Math.abs(it.pct) >= data.threshold_pct) {
+          const b = document.createElement("span");
+          b.className = "badge";
+          b.textContent = "ALERTA";
+          p.appendChild(b);
+        }
+
         const barwrap = document.createElement("div");
         barwrap.className = "barwrap";
         const bar = document.createElement("div");
@@ -80,15 +130,6 @@
         row.appendChild(t);
         row.appendChild(p);
         row.appendChild(barwrap);
-
-        // badge se passou do threshold
-        if (it.pct != null && Math.abs(it.pct) >= data.threshold_pct) {
-          const b = document.createElement("span");
-          b.className = "badge";
-          b.textContent = "ALERTA";
-          p.appendChild(b);
-        }
-
         root.appendChild(row);
 
         // notícias
@@ -116,7 +157,24 @@
       }
     }
 
-    main().catch(err => {
+    // UI
+    document.getElementById("toggleDash").addEventListener("click", () => {
+      const panel = document.getElementById("dashPanel");
+      const btn = document.getElementById("toggleDash");
+      const isOpen = panel.style.display === "block";
+      panel.style.display = isOpen ? "none" : "block";
+      btn.textContent = isOpen ? "Mostrar dashboard aqui" : "Esconder dashboard";
+    });
+
+    document.getElementById("reload").addEventListener("click", () => {
+      document.getElementById("status").textContent = "Recarregando...";
+      loadMonitor().catch(err => {
+        document.getElementById("status").textContent = "Erro carregando dados: " + err;
+      });
+    });
+
+    // first load
+    loadMonitor().catch(err => {
       document.getElementById("status").textContent = "Erro carregando dados: " + err;
     });
   </script>
