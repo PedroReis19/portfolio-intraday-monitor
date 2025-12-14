@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2025-12-14T04:56:28.800071+00:00",
+  "generated_at_utc": "2025-12-14T05:04:12.757987+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
@@ -11,22 +11,22 @@
   "items": [
     {
       "ticker": "NTSK",
-      "error": "Sem dados intraday (ticker pode não existir na fonte).",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     },
     {
       "ticker": "KLAR",
-      "error": "Sem dados intraday (ticker pode não existir na fonte).",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     },
     {
       "ticker": "FIG",
-      "error": "Sem dados intraday (ticker pode não existir na fonte).",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     },
     {
       "ticker": "NAVN",
-      "error": "Sem dados intraday (ticker pode não existir na fonte).",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     }
   ]
