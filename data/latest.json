@@ -1,49 +1,33 @@
 {
-  "generated_at_utc": "2025-12-29T21:28:18.344516+00:00",
+  "generated_at_utc": "2025-12-30T21:29:43.998178+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
     "FIG",
     "NAVN"
   ],
-  "portfolio_pct": 2.146986610340236,
+  "portfolio_pct": null,
   "threshold_pct": 5.0,
   "items": [
     {
       "ticker": "NTSK",
-      "open": 18.149999618530273,
-      "last": 18.18000030517578,
-      "pct": 0.16529304284325472,
-      "last_timestamp_utc": "2025-12-29T20:55:00+00:00",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     },
     {
       "ticker": "KLAR",
-      "open": 29.290000915527344,
-      "last": 29.549999237060547,
-      "pct": 0.8876692161363904,
-      "last_timestamp_utc": "2025-12-29T20:55:00+00:00",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     },
     {
       "ticker": "FIG",
-      "open": 37.77000045776367,
-      "last": 37.81999969482422,
-      "pct": 0.13237817435681143,
-      "last_timestamp_utc": "2025-12-29T20:55:00+00:00",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     },
     {
       "ticker": "NAVN",
-      "open": 15.399999618530273,
-      "last": 16.540000915527344,
-      "pct": 7.402606008024488,
-      "last_timestamp_utc": "2025-12-29T20:55:00+00:00",
-      "news": [
-        {
-          "error": "Falha ao buscar notícias no GDELT: The query was not valid. The API error message was: The specified phrase is too short."
-        }
-      ]
+      "error": "Sem dados intraday (hoje e últimos dias).",
+      "news": []
     }
   ]
 }
