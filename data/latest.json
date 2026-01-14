@@ -1,33 +1,49 @@
 {
-  "generated_at_utc": "2026-01-13T21:32:03.482899+00:00",
+  "generated_at_utc": "2026-01-14T21:32:18.522017+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
     "FIG",
     "NAVN"
   ],
-  "portfolio_pct": null,
+  "portfolio_pct": -4.004796333598713,
   "threshold_pct": 5.0,
   "items": [
     {
       "ticker": "NTSK",
-      "error": "Sem dados intraday (hoje e últimos dias).",
+      "open": 16.360000610351562,
+      "last": 15.71500015258789,
+      "pct": -3.942545438265796,
+      "last_timestamp_utc": "2026-01-14T20:55:00+00:00",
       "news": []
     },
     {
       "ticker": "KLAR",
-      "error": "Sem dados intraday (hoje e últimos dias).",
+      "open": 29.799999237060547,
+      "last": 30.135000228881836,
+      "pct": 1.1241644308657148,
+      "last_timestamp_utc": "2026-01-14T20:55:00+00:00",
       "news": []
     },
     {
       "ticker": "FIG",
-      "error": "Sem dados intraday (hoje e últimos dias).",
+      "open": 33.86000061035156,
+      "last": 32.349998474121094,
+      "pct": -4.45954550800816,
+      "last_timestamp_utc": "2026-01-14T20:55:00+00:00",
       "news": []
     },
     {
       "ticker": "NAVN",
-      "error": "Sem dados intraday (hoje e últimos dias).",
-      "news": []
+      "open": 17.15999984741211,
+      "last": 15.65999984741211,
+      "pct": -8.74125881898661,
+      "last_timestamp_utc": "2026-01-14T20:55:00+00:00",
+      "news": [
+        {
+          "error": "Falha ao buscar notícias no GDELT: The query was not valid. The API error message was: The specified phrase is too short."
+        }
+      ]
     }
   ]
 }
