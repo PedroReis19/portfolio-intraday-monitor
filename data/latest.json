@@ -1,33 +1,53 @@
 {
-  "generated_at_utc": "2026-02-04T21:44:40.333769+00:00",
+  "generated_at_utc": "2026-02-05T21:40:20.739868+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
     "FIG",
     "NAVN"
   ],
-  "portfolio_pct": null,
+  "portfolio_pct": -5.575996287385458,
   "threshold_pct": 5.0,
   "items": [
     {
       "ticker": "NTSK",
-      "error": "Sem dados intraday (hoje e últimos dias).",
-      "news": []
+      "open": 12.850000381469727,
+      "last": 11.524999618530273,
+      "pct": -10.311289677859959,
+      "last_timestamp_utc": "2026-02-05T20:55:00+00:00",
+      "news": [
+        {
+          "error": "Falha ao buscar notícias no GDELT: The query was not valid. The API error message was: The specified phrase is too short."
+        }
+      ]
     },
     {
       "ticker": "KLAR",
-      "error": "Sem dados intraday (hoje e últimos dias).",
+      "open": 21.389999389648438,
+      "last": 20.357999801635742,
+      "pct": -4.824682643572797,
+      "last_timestamp_utc": "2026-02-05T20:55:00+00:00",
       "news": []
     },
     {
       "ticker": "FIG",
-      "error": "Sem dados intraday (hoje e últimos dias).",
+      "open": 21.829999923706055,
+      "last": 22.219999313354492,
+      "pct": 1.7865295053204369,
+      "last_timestamp_utc": "2026-02-05T20:55:00+00:00",
       "news": []
     },
     {
       "ticker": "NAVN",
-      "error": "Sem dados intraday (hoje e últimos dias).",
-      "news": []
+      "open": 11.0,
+      "last": 10.015000343322754,
+      "pct": -8.95454233342951,
+      "last_timestamp_utc": "2026-02-05T20:55:00+00:00",
+      "news": [
+        {
+          "error": "Falha ao buscar notícias no GDELT: The gdelt api returned a non-successful statuscode. This is the response message: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n"
+        }
+      ]
     }
   ]
 }
