@@ -1,48 +1,44 @@
 {
-  "generated_at_utc": "2026-02-12T21:46:16.070233+00:00",
+  "generated_at_utc": "2026-02-13T21:48:35.950649+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
     "FIG",
     "NAVN"
   ],
-  "portfolio_pct": -3.710897111665155,
+  "portfolio_pct": 1.2585941669993548,
   "threshold_pct": 5.0,
   "items": [
     {
       "ticker": "NTSK",
-      "open": 11.8100004196167,
-      "last": 11.5,
-      "pct": -2.6248976172920444,
-      "last_timestamp_utc": "2026-02-12T20:55:00+00:00",
+      "open": 11.520000457763672,
+      "last": 11.890000343322754,
+      "pct": 3.211804434519168,
+      "last_timestamp_utc": "2026-02-13T20:55:00+00:00",
       "news": []
     },
     {
       "ticker": "KLAR",
-      "open": 19.0,
-      "last": 17.799999237060547,
-      "pct": -6.315793489155016,
-      "last_timestamp_utc": "2026-02-12T20:55:00+00:00",
-      "news": [
-        {
-          "error": "Falha ao buscar notícias no GDELT: The query was not valid. The API error message was: The specified phrase is too short."
-        }
-      ]
+      "open": 18.100000381469727,
+      "last": 18.09000015258789,
+      "pct": -0.055249882160631834,
+      "last_timestamp_utc": "2026-02-13T20:55:00+00:00",
+      "news": []
     },
     {
       "ticker": "FIG",
-      "open": 22.600000381469727,
-      "last": 22.014999389648438,
-      "pct": -2.5884999201192276,
-      "last_timestamp_utc": "2026-02-12T20:55:00+00:00",
+      "open": 22.469999313354492,
+      "last": 22.520000457763672,
+      "pct": 0.22252401396141894,
+      "last_timestamp_utc": "2026-02-13T20:55:00+00:00",
       "news": []
     },
     {
       "ticker": "NAVN",
-      "open": 10.5600004196167,
-      "last": 10.210000038146973,
-      "pct": -3.3143974200943322,
-      "last_timestamp_utc": "2026-02-12T20:55:00+00:00",
+      "open": 10.270000457763672,
+      "last": 10.4399995803833,
+      "pct": 1.655298101677464,
+      "last_timestamp_utc": "2026-02-13T20:55:00+00:00",
       "news": []
     }
   ]
