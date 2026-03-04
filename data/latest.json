@@ -1,75 +1,44 @@
 {
-  "generated_at_utc": "2026-03-03T21:46:07.735372+00:00",
+  "generated_at_utc": "2026-03-04T21:46:41.199260+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
     "FIG",
     "NAVN"
   ],
-  "portfolio_pct": 3.682470069915774,
+  "portfolio_pct": 1.1580609733527183,
   "threshold_pct": 5.0,
   "items": [
     {
       "ticker": "NTSK",
-      "open": 10.239999771118164,
-      "last": 10.260000228881836,
-      "pct": 0.19531697471403273,
-      "last_timestamp_utc": "2026-03-03T20:55:00+00:00",
+      "open": 10.34000015258789,
+      "last": 10.579999923706055,
+      "pct": 2.3210809243372887,
+      "last_timestamp_utc": "2026-03-04T20:55:00+00:00",
       "news": []
     },
     {
       "ticker": "KLAR",
-      "open": 13.0,
-      "last": 13.390000343322754,
-      "pct": 3.0000026409442606,
-      "last_timestamp_utc": "2026-03-03T20:55:00+00:00",
+      "open": 13.5,
+      "last": 13.574999809265137,
+      "pct": 0.5555541427047165,
+      "last_timestamp_utc": "2026-03-04T20:55:00+00:00",
       "news": []
     },
     {
       "ticker": "FIG",
-      "open": 28.469999313354492,
-      "last": 30.770000457763672,
-      "pct": 8.0786835261015,
-      "last_timestamp_utc": "2026-03-03T20:55:00+00:00",
-      "news": [
-        {
-          "title": "Figma Partners With Claude on Artificial Intelligence ( AI ). Could This Be the Catalyst the Stock Needs to Rally ? ",
-          "url": "https://www.fool.com/investing/2026/03/02/figma-partners-with-claude-on-artificial-intellige/?source=iedfolrf0000001",
-          "seendate": "20260302T231500Z",
-          "domain": "fool.com"
-        },
-        {
-          "title": "Disruption Stories : 2 Stocks That Motley Fool Analysts Think Could Be Most at Risk",
-          "url": "https://www.fool.com/investing/2026/03/02/disruption-stories-2-stocks-that-motley-fool-analy/?source=iedfolrf0000001",
-          "seendate": "20260302T181500Z",
-          "domain": "fool.com"
-        },
-        {
-          "title": "How ChatGPT , Claude , and Gemini Features Compare",
-          "url": "https://www.businessinsider.com/chatgpt-claude-gemini-features-comparison-2026-3",
-          "seendate": "20260302T174500Z",
-          "domain": "businessinsider.com"
-        },
-        {
-          "title": "Cathie Wood Goes Bargain Hunting : 3 Stocks She Just Bought",
-          "url": "https://www.fool.com/investing/2026/03/01/cathie-wood-bargain-hunting-stocks-buy-fig/?source=iedfolrf0000001",
-          "seendate": "20260301T161500Z",
-          "domain": "fool.com"
-        },
-        {
-          "title": "Cathie Wood Goes Bargain Hunting : 3 Stocks She Just Bought",
-          "url": "https://finance.yahoo.com/news/cathie-wood-goes-bargain-hunting-145000696.html",
-          "seendate": "20260301T153000Z",
-          "domain": "finance.yahoo.com"
-        }
-      ]
+      "open": 30.56999969482422,
+      "last": 29.6200008392334,
+      "pct": -3.1076181389418327,
+      "last_timestamp_utc": "2026-03-04T20:55:00+00:00",
+      "news": []
     },
     {
       "ticker": "NAVN",
-      "open": 9.520000457763672,
-      "last": 9.848999977111816,
-      "pct": 3.455877137903303,
-      "last_timestamp_utc": "2026-03-03T20:55:00+00:00",
+      "open": 9.869999885559082,
+      "last": 10.350000381469727,
+      "pct": 4.863226965310701,
+      "last_timestamp_utc": "2026-03-04T20:55:00+00:00",
       "news": []
     }
   ]
