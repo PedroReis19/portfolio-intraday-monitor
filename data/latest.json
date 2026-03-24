@@ -1,32 +1,48 @@
 {
-  "generated_at_utc": "2026-03-23T21:48:07.438460+00:00",
+  "generated_at_utc": "2026-03-24T21:49:19.710144+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
     "FIG",
     "NAVN"
   ],
-  "portfolio_pct": null,
+  "portfolio_pct": -1.174979543369202,
   "threshold_pct": 5.0,
   "items": [
     {
       "ticker": "NTSK",
-      "error": "Sem dados intraday (hoje e últimos dias).",
+      "open": 9.180000305175781,
+      "last": 8.8100004196167,
+      "pct": -4.0304997087034105,
+      "last_timestamp_utc": "2026-03-24T19:55:00+00:00",
       "news": []
     },
     {
       "ticker": "KLAR",
-      "error": "Sem dados intraday (hoje e últimos dias).",
-      "news": []
+      "open": 12.850000381469727,
+      "last": 13.569999694824219,
+      "pct": 5.603107330586257,
+      "last_timestamp_utc": "2026-03-24T19:55:00+00:00",
+      "news": [
+        {
+          "error": "Falha ao buscar notícias no GDELT: The gdelt api returned a non-successful statuscode. This is the response message: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n"
+        }
+      ]
     },
     {
       "ticker": "FIG",
-      "error": "Sem dados intraday (hoje e últimos dias).",
+      "open": 22.649999618530273,
+      "last": 21.899999618530273,
+      "pct": -3.311258333913678,
+      "last_timestamp_utc": "2026-03-24T19:55:00+00:00",
       "news": []
     },
     {
       "ticker": "NAVN",
-      "error": "Sem dados intraday (hoje e últimos dias).",
+      "open": 8.779999732971191,
+      "last": 8.520000457763672,
+      "pct": -2.961267461445977,
+      "last_timestamp_utc": "2026-03-24T19:55:00+00:00",
       "news": []
     }
   ]
