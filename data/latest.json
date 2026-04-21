@@ -1,49 +1,45 @@
 {
-  "generated_at_utc": "2026-04-20T21:57:37.705849+00:00",
+  "generated_at_utc": "2026-04-21T21:55:27.128899+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
     "FIG",
     "NAVN"
   ],
-  "portfolio_pct": 3.179672609048371,
+  "portfolio_pct": -1.4520499176840107,
   "threshold_pct": 5.0,
   "items": [
     {
       "ticker": "NTSK",
-      "open": 9.720000267028809,
-      "last": 10.069999694824219,
-      "pct": 3.6008170594669884,
-      "last_timestamp_utc": "2026-04-20T19:55:00+00:00",
+      "open": 10.130000114440918,
+      "last": 10.079999923706055,
+      "pct": -0.4935852928923962,
+      "last_timestamp_utc": "2026-04-21T19:55:00+00:00",
       "news": []
     },
     {
       "ticker": "KLAR",
-      "open": 14.859999656677246,
-      "last": 14.899999618530273,
-      "pct": 0.26917875354763965,
-      "last_timestamp_utc": "2026-04-20T19:55:00+00:00",
+      "open": 14.899999618530273,
+      "last": 14.545000076293945,
+      "pct": -2.382547324329026,
+      "last_timestamp_utc": "2026-04-21T19:55:00+00:00",
       "news": []
     },
     {
       "ticker": "FIG",
-      "open": 18.690000534057617,
-      "last": 19.020000457763672,
-      "pct": 1.7656496215969417,
-      "last_timestamp_utc": "2026-04-20T19:55:00+00:00",
+      "open": 19.0,
+      "last": 18.709999084472656,
+      "pct": -1.5263206080386513,
+      "last_timestamp_utc": "2026-04-21T19:55:00+00:00",
       "news": []
     },
     {
       "ticker": "NAVN",
-      "open": 14.329999923706055,
-      "last": 15.345000267028809,
-      "pct": 7.083045001581914,
-      "last_timestamp_utc": "2026-04-20T19:55:00+00:00",
-      "news": [
-        {
-          "error": "Falha ao buscar notícias no GDELT: The query was not valid. The API error message was: The specified phrase is too short."
-        }
-      ]
+      "open": 15.649999618530273,
+      "last": 15.430000305175781,
+      "pct": -1.40574644547597,
+      "last_timestamp_utc": "2026-04-21T19:55:00+00:00",
+      "news": []
     }
   ]
 }
