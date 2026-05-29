@@ -1,36 +1,40 @@
 {
-  "generated_at_utc": "2026-05-28T22:44:29.562415+00:00",
+  "generated_at_utc": "2026-05-29T22:43:05.415979+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
     "FIG",
     "NAVN"
   ],
-  "portfolio_pct": 3.702175129031672,
+  "portfolio_pct": 6.231577334636851,
   "threshold_pct": 5.0,
   "items": [
     {
       "ticker": "NTSK",
-      "open": 11.149999618530273,
-      "last": 11.515000343322754,
-      "pct": 3.273549213274257,
-      "last_timestamp_utc": "2026-05-28T19:55:00+00:00",
-      "news": []
+      "open": 11.550000190734863,
+      "last": 12.130000114440918,
+      "pct": 5.0216442781647475,
+      "last_timestamp_utc": "2026-05-29T19:55:00+00:00",
+      "news": [
+        {
+          "error": "Falha ao buscar notícias no GDELT: HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Max retries exceeded with url: /api/v2/doc/doc?query=%22NTSK%22%20&startdatetime=20260526000000&enddatetime=20260529000000&maxrecords=250&mode=artlist&format=json (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.gdeltproject.org', port=443) at 0x7f2e661be0d0>, 'Connection to api.gdeltproject.org timed out. (connect timeout=None)'))"
+        }
+      ]
     },
     {
       "ticker": "KLAR",
-      "open": 17.25,
-      "last": 17.44499969482422,
-      "pct": 1.1304330134737317,
-      "last_timestamp_utc": "2026-05-28T19:55:00+00:00",
+      "open": 17.450000762939453,
+      "last": 18.280000686645508,
+      "pct": 4.7564463462306525,
+      "last_timestamp_utc": "2026-05-29T19:55:00+00:00",
       "news": []
     },
     {
       "ticker": "FIG",
-      "open": 21.700000762939453,
-      "last": 23.450000762939453,
-      "pct": 8.064515845495976,
-      "last_timestamp_utc": "2026-05-28T19:55:00+00:00",
+      "open": 23.389999389648438,
+      "last": 25.530000686645508,
+      "pct": 9.149214847539316,
+      "last_timestamp_utc": "2026-05-29T19:55:00+00:00",
       "news": [
         {
           "error": "Falha ao buscar notícias no GDELT: The gdelt api returned a non-successful statuscode. This is the response message: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n"
@@ -39,11 +43,15 @@
     },
     {
       "ticker": "NAVN",
-      "open": 19.8700008392334,
-      "last": 20.334999084472656,
-      "pct": 2.340202443882724,
-      "last_timestamp_utc": "2026-05-28T19:55:00+00:00",
-      "news": []
+      "open": 20.170000076293945,
+      "last": 21.3799991607666,
+      "pct": 5.99900386661269,
+      "last_timestamp_utc": "2026-05-29T19:55:00+00:00",
+      "news": [
+        {
+          "error": "Falha ao buscar notícias no GDELT: The query was not valid. The API error message was: The specified phrase is too short."
+        }
+      ]
     }
   ]
 }
