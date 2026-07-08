@@ -1,44 +1,32 @@
 {
-  "generated_at_utc": "2026-07-07T22:19:07.709072+00:00",
+  "generated_at_utc": "2026-07-08T22:14:25.434333+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
     "FIG",
     "NAVN"
   ],
-  "portfolio_pct": -0.8747234952810516,
+  "portfolio_pct": null,
   "threshold_pct": 5.0,
   "items": [
     {
       "ticker": "NTSK",
-      "open": 12.449999809265137,
-      "last": 12.050000190734863,
-      "pct": -3.212848390829682,
-      "last_timestamp_utc": "2026-07-07T19:55:00+00:00",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     },
     {
       "ticker": "KLAR",
-      "open": 19.899999618530273,
-      "last": 19.43000030517578,
-      "pct": -2.3618056400204304,
-      "last_timestamp_utc": "2026-07-07T19:55:00+00:00",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     },
     {
       "ticker": "FIG",
-      "open": 22.329999923706055,
-      "last": 22.204999923706055,
-      "pct": -0.5597850444562567,
-      "last_timestamp_utc": "2026-07-07T19:55:00+00:00",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     },
     {
       "ticker": "NAVN",
-      "open": 26.559999465942383,
-      "last": 27.260000228881836,
-      "pct": 2.635545094182163,
-      "last_timestamp_utc": "2026-07-07T19:55:00+00:00",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     }
   ]
