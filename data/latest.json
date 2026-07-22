@@ -1,33 +1,57 @@
 {
-  "generated_at_utc": "2026-07-21T22:09:26.878102+00:00",
+  "generated_at_utc": "2026-07-22T22:13:46.813225+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
     "FIG",
     "NAVN"
   ],
-  "portfolio_pct": null,
+  "portfolio_pct": -7.056762948022125,
   "threshold_pct": 5.0,
   "items": [
     {
       "ticker": "NTSK",
-      "error": "Sem dados intraday (hoje e últimos dias).",
-      "news": []
+      "open": 13.15999984741211,
+      "last": 11.949999809265137,
+      "pct": -9.194529271859505,
+      "last_timestamp_utc": "2026-07-22T19:55:00+00:00",
+      "news": [
+        {
+          "error": "Falha ao buscar notícias no GDELT: The gdelt api returned a non-successful statuscode. This is the response message: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+        }
+      ]
     },
     {
       "ticker": "KLAR",
-      "error": "Sem dados intraday (hoje e últimos dias).",
-      "news": []
+      "open": 19.049999237060547,
+      "last": 17.854999542236328,
+      "pct": -6.272964528520419,
+      "last_timestamp_utc": "2026-07-22T19:55:00+00:00",
+      "news": [
+        {
+          "error": "Falha ao buscar notícias no GDELT: The gdelt api returned a non-successful statuscode. This is the response message: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+        }
+      ]
     },
     {
       "ticker": "FIG",
-      "error": "Sem dados intraday (hoje e últimos dias).",
+      "open": 22.0,
+      "last": 21.46500015258789,
+      "pct": -2.431817488236861,
+      "last_timestamp_utc": "2026-07-22T19:55:00+00:00",
       "news": []
     },
     {
       "ticker": "NAVN",
-      "error": "Sem dados intraday (hoje e últimos dias).",
-      "news": []
+      "open": 26.239999771118164,
+      "last": 23.530000686645508,
+      "pct": -10.327740503471716,
+      "last_timestamp_utc": "2026-07-22T19:55:00+00:00",
+      "news": [
+        {
+          "error": "Falha ao buscar notícias no GDELT: The gdelt api returned a non-successful statuscode. This is the response message: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+        }
+      ]
     }
   ]
 }
