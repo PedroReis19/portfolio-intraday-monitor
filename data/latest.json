@@ -1,48 +1,32 @@
 {
-  "generated_at_utc": "2026-09-22T23:34:58.641657+00:00",
+  "generated_at_utc": "2026-09-23T23:36:54.856654+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
     "FIG",
     "NAVN"
   ],
-  "portfolio_pct": -2.212364206853737,
+  "portfolio_pct": null,
   "threshold_pct": 5.0,
   "items": [
     {
       "ticker": "NTSK",
-      "open": 18.315000534057617,
-      "last": 18.549999237060547,
-      "pct": 1.283094164075717,
-      "last_timestamp_utc": "2026-09-22T19:55:00+00:00",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     },
     {
       "ticker": "KLAR",
-      "open": 13.899999618530273,
-      "last": 13.675000190734863,
-      "pct": -1.6187009638148513,
-      "last_timestamp_utc": "2026-09-22T19:55:00+00:00",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     },
     {
       "ticker": "FIG",
-      "open": 23.170000076293945,
-      "last": 21.799999237060547,
-      "pct": -5.912821902124615,
-      "last_timestamp_utc": "2026-09-22T19:55:00+00:00",
-      "news": [
-        {
-          "error": "Falha ao buscar notícias no GDELT: The gdelt api returned a non-successful statuscode. This is the response message: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
-        }
-      ]
+      "error": "Sem dados intraday (hoje e últimos dias).",
+      "news": []
     },
     {
       "ticker": "NAVN",
-      "open": 21.530000686645508,
-      "last": 20.969999313354492,
-      "pct": -2.601028125551198,
-      "last_timestamp_utc": "2026-09-22T19:55:00+00:00",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     }
   ]
