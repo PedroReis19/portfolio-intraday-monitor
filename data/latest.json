@@ -1,44 +1,48 @@
 {
-  "generated_at_utc": "2026-10-20T23:47:31.833355+00:00",
+  "generated_at_utc": "2026-10-21T23:58:37.018306+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
     "FIG",
     "NAVN"
   ],
-  "portfolio_pct": 2.8209387352195905,
+  "portfolio_pct": 2.6067718142249214,
   "threshold_pct": 5.0,
   "items": [
     {
       "ticker": "NTSK",
-      "open": 19.280000686645508,
-      "last": 19.829999923706055,
-      "pct": 2.8526930366839123,
-      "last_timestamp_utc": "2026-10-20T19:55:00+00:00",
-      "news": []
+      "open": 19.969999313354492,
+      "last": 21.809999465942383,
+      "pct": 9.213821811988904,
+      "last_timestamp_utc": "2026-10-21T19:55:00+00:00",
+      "news": [
+        {
+          "error": "Falha ao buscar notícias no GDELT: The gdelt api returned a non-successful statuscode. This is the response message: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+        }
+      ]
     },
     {
       "ticker": "KLAR",
-      "open": 12.920000076293945,
-      "last": 13.149999618530273,
-      "pct": 1.7801822049392946,
-      "last_timestamp_utc": "2026-10-20T19:55:00+00:00",
+      "open": 13.149999618530273,
+      "last": 13.109999656677246,
+      "pct": -0.3041822282387107,
+      "last_timestamp_utc": "2026-10-21T19:55:00+00:00",
       "news": []
     },
     {
       "ticker": "FIG",
-      "open": 21.780000686645508,
-      "last": 22.711000442504883,
-      "pct": 4.274562564317186,
-      "last_timestamp_utc": "2026-10-20T19:55:00+00:00",
+      "open": 22.78499984741211,
+      "last": 22.979999542236328,
+      "pct": 0.8558248678082241,
+      "last_timestamp_utc": "2026-10-21T19:55:00+00:00",
       "news": []
     },
     {
       "ticker": "NAVN",
-      "open": 25.670000076293945,
-      "last": 26.280000686645508,
-      "pct": 2.376317134937968,
-      "last_timestamp_utc": "2026-10-20T19:55:00+00:00",
+      "open": 26.450000762939453,
+      "last": 26.625,
+      "pct": 0.6616228053412683,
+      "last_timestamp_utc": "2026-10-21T19:55:00+00:00",
       "news": []
     }
   ]
