@@ -1,48 +1,32 @@
 {
-  "generated_at_utc": "2026-11-19T02:29:06.186729+00:00",
+  "generated_at_utc": "2026-11-20T02:13:48.385668+00:00",
   "tickers": [
     "NTSK",
     "KLAR",
     "FIG",
     "NAVN"
   ],
-  "portfolio_pct": 2.5088649938605903,
+  "portfolio_pct": null,
   "threshold_pct": 5.0,
   "items": [
     {
       "ticker": "NTSK",
-      "open": 20.899999618530273,
-      "last": 23.5,
-      "pct": 12.440193439833964,
-      "last_timestamp_utc": "2026-11-18T20:55:00+00:00",
-      "news": [
-        {
-          "error": "Falha ao buscar notícias no GDELT: The gdelt api returned a non-successful statuscode. This is the response message: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
-        }
-      ]
+      "error": "Sem dados intraday (hoje e últimos dias).",
+      "news": []
     },
     {
       "ticker": "KLAR",
-      "open": 14.300000190734863,
-      "last": 14.460000038146973,
-      "pct": 1.1188800369091962,
-      "last_timestamp_utc": "2026-11-18T20:55:00+00:00",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     },
     {
       "ticker": "FIG",
-      "open": 17.899999618530273,
-      "last": 17.329999923706055,
-      "pct": -3.1843559048691206,
-      "last_timestamp_utc": "2026-11-18T20:55:00+00:00",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     },
     {
       "ticker": "NAVN",
-      "open": 25.05500030517578,
-      "last": 24.969999313354492,
-      "pct": -0.3392575964316785,
-      "last_timestamp_utc": "2026-11-18T20:55:00+00:00",
+      "error": "Sem dados intraday (hoje e últimos dias).",
       "news": []
     }
   ]
